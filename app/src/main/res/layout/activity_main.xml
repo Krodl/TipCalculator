@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.teeniebyte.tipcalculator.MainActivity">
+
+    <TextView
+        android:id="@+id/label_bill"
+        style="@style/LabelStyle"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:minWidth="120dp"
+        android:text="@string/label_bill"/>
+
+    <EditText
+        android:id="@+id/amount_bill"
+        style="@style/InputStyle"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@+id/label_bill"
+        android:layout_alignBottom="@+id/label_bill"
+        android:layout_alignParentRight="true"
+        android:hint="@string/amount_bill_hint"
+        android:inputType="numberDecimal" />
+
+    <!-- red line -->
+    <View
+        android:id="@+id/red_line"
+        android:layout_below="@+id/label_bill"
+        android:layout_marginTop="20dp"
+        android:layout_height="5dip"
+        android:layout_width="match_parent"
+        android:layout_alignLeft="@id/label_bill"
+        android:layout_alignRight="@id/amount_bill"
+        android:background="#FF00" />
+
+    <TextView
+        android:id="@+id/label_tip"
+        style="@style/LabelStyle"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/red_line"
+        android:layout_alignLeft="@+id/label_bill"
+        android:layout_alignRight="@+id/label_bill"
+        android:text="@string/label_tip" />
+
+    <TextView
+        android:id="@+id/amount_tip"
+        style="@style/OutputStyle"
+        android:layout_toRightOf="@+id/label_tip"
+        android:layout_alignBottom="@+id/label_tip"
+        android:layout_alignRight="@id/amount_bill" />
+
+    <TextView
+        android:id="@+id/label_total"
+        style="@style/LabelStyle"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/label_tip"
+        android:layout_alignLeft="@+id/label_bill"
+        android:layout_alignRight="@+id/label_bill"
+        android:text="@string/label_total" />
+
+    <TextView
+        android:id="@+id/amount_total"
+        style="@style/OutputStyle"
+        android:layout_toRightOf="@+id/label_total"
+        android:layout_alignBottom="@+id/label_total"
+        android:layout_alignRight="@id/amount_bill" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignLeft="@+id/label_total"
+        android:layout_alignStart="@+id/label_total"
+        android:onClick="calculate"
+        android:text="%10" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/amount_total"
+        android:layout_alignRight="@+id/amount_total"
+        android:layout_below="@+id/amount_total"
+        android:layout_marginTop="24dp"
+        android:onClick="calculate"
+        android:text="%15" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignStart="@+id/button1"
+        android:onClick="calculate"
+        android:text="%20" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="53dp"
+        android:onClick="calculate"
+        android:text="%25" />
+
+</RelativeLayout>
