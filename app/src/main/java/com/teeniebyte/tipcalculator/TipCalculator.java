@@ -1,9 +1,5 @@
 package com.teeniebyte.tipcalculator;
 
-/**
- * Created by kteen on 1/28/2018.
- */
-
 public class TipCalculator {
     private float tip;
     private float bill;
